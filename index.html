@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<script>
-document.addEventListener('touchstart', function(){}, {passive:true});
-</script>
+    <script>
+      document.addEventListener('touchstart', function(){}, {passive:true});
+      document.addEventListener('wheel', function(){}, { passive: true });
+      document.addEventListener('touchmove', function(){}, { passive: true });
+    </script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Portfolio</title>
 
-	<link rel="icon" type="image/png" sizes="48x48" href="favico.png.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favico.png.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="favico.png.png">
 
     <meta charset="utf-8">
@@ -34,15 +36,15 @@ document.addEventListener('touchstart', function(){}, {passive:true});
     <link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <style>
+        lottie-player {
+            pointer-events: none; 
+        }
+    </style>
   </head>
-  <script>
-document.addEventListener('wheel', function(){}, { passive: true });
-document.addEventListener('touchmove', function(){}, { passive: true });
-</script>
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
-
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="index.html"><I>HARIHARAN</I></a>
@@ -102,9 +104,7 @@ document.addEventListener('touchmove', function(){}, { passive: true });
 	         <div class="one-third js-fullheight order-md-last img d-flex align-items-center justify-content-center">
 
   <lottie-player
-  src=https://assets4.lottiefiles.com/packages/lf20_qp1q7mct.json
-
-
+  src="https://assets4.lottiefiles.com/packages/lf20_qp1q7mct.json"
     background="transparent"
     speed="1"
     style="width: 320px; height: 420px;"
@@ -133,7 +133,7 @@ document.addEventListener('touchmove', function(){}, { passive: true });
     			<div class="col-md-6 col-lg-5 d-flex">
     				<div class="img-about img d-flex align-items-center justify-content-center">
     					<div class="overlay"></div>
-                        <div class="w-100 d-flex justify-content-center align-items-center">
+                        <div style="width: 100%; display: flex; justify-content: center;">
                           <lottie-player
                            src="https://lottie.host/a7e9a902-14d5-48c1-ac4c-20ab05dc1f17/izoq47PJzX.json"
                             background="transparent"
@@ -224,7 +224,7 @@ document.addEventListener('touchmove', function(){}, { passive: true });
     					<span class="date">2025</span>
     					<h2 style="font-family: 'Times New Roman', Times, serif;">SAP MM CONSULTANT</h2>
     					<span class="position" style="font-size: 20px;">VIKAPRI TRAINING</span>
-						<p>&nbsp;</p>
+						<p> </p>
     					<p class="mt-4">SAP Certified MM Consultant Completed 2025. <br></br>
 						</p>
     				</div>
@@ -471,14 +471,15 @@ document.addEventListener('touchmove', function(){}, { passive: true });
 
     <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
     	<div class="container">
-    		<div class="row d-md-flex align-items-center">
+				<div class="row d-md-flex align-items-center">
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-				<div class="counter-number">
-                <strong class="number" data-number="6">0</strong><span class="plus"style="color:#f9b233;"><b>+</b></span>
-			</div>
-			<div class="hari">
+                <div class="counter-number">
+  <strong class="number" data-number="6">0</strong><span class="plus"style="color:#f9b233;"><b>+</b></span>
+</div>
+				 
+				<div class="hari">
                 <span>SAP MM Modules</span></div>
               </div>
             </div>
@@ -486,9 +487,9 @@ document.addEventListener('touchmove', function(){}, { passive: true });
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-				<div class="counter-number">
-                <strong class="number" data-number="25">0</strong><span class="plus"style="color:#f9b233;"><b>+</b></span>
-			</div>
+                <div class="counter-number">
+  <strong class="number" data-number="25">0</strong><span class="plus"style="color:#f9b233;"><b>+</b></span>
+</div>
                 <span>procurement Scenarios</span>
               </div>
             </div>
@@ -496,9 +497,9 @@ document.addEventListener('touchmove', function(){}, { passive: true });
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-				<div class="counter-number">
-                <strong class="number" data-number="40">0</strong><span class="plus"style="color:#f9b233;"><b>+</b></span>
-			</div>
+                <div class="counter-number">
+  <strong class="number" data-number="40">0</strong><span class="plus"style="color:#f9b233;"><b>+</b></span>
+</div>
                 <span>P2P Process Cases</span>
               </div>
             </div>
@@ -506,15 +507,16 @@ document.addEventListener('touchmove', function(){}, { passive: true });
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-				<div class="counter-number">
-                <strong class="number" data-number="10">0</strong><span class="plus" style="color:#f9b233;"><b>+</b></span>
-			</div>
+                <div class="counter-number">
+ 
+  <strong class="number" data-number="10">0</strong><span class="plus" style="color:#f9b233;"><b>+</b></span>
+</div>
                 <span>SAP Configuration</span>
               </div>
             </div>
           </div>
         </div>
-    	</div>
+      </div>
     </section>
 
     <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(https://images.unsplash.com/photo-1510519138101-570d1dca3d66?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
@@ -523,6 +525,8 @@ document.addEventListener('touchmove', function(){}, { passive: true });
 					<div class="col-md-7 ftco-animate text-center">
 						<h2>I'm <span>Available</span> for freelancing</h2>
 						<p style="text-align: justify;color: rgb(255, 255, 255);">I am available for freelancing in SAP MM, with hands-on knowledge in procurement, inventory management, goods receipt, invoice verification, and SAP S/4HANA MM processes. I aim to support businesses by providing efficient and structured SAP solutions.</p>
+						
+
 					</div>
 				</div>
 			</div>
@@ -575,18 +579,17 @@ document.addEventListener('touchmove', function(){}, { passive: true });
 	            <p><a href="https://hariharan2732004.github.io/Portfolio-1/">hariharan.in</a></p>
 	          </div>
           </div>
-		  
-		  <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-			<div class="align-self-stretch box p-4 text-center">
-				<div class="icon d-flex align-items-center justify-content-center">
-					<span class="icon-map-marker"></span>
-				</div>
-				<h3 class="mb-4">Map</h3>
-				<div class="map-box">
+		   <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-marker"></span>
+          		</div>
+          		<h3 class="mb-4">Map</h3>
+	            <div class="map-box">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3923.914681736177!2d79.30841607487741!3d10.428344989700037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDI1JzQyLjAiTiA3OcKwMTgnMzkuNiJF!5e0!3m2!1sen!2sin!4v1768072165326!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-				  </div>
-			</div>
-		</div>
+				</div>
+	          </div>
+          </div>
         </div>
 
         <div class="row no-gutters block-9">
@@ -613,18 +616,18 @@ document.addEventListener('touchmove', function(){}, { passive: true });
 
           <div class="col-md-6 d-flex">
           	<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-
-  
-   <lottie-player
-     src="https://lottie.host/70faf130-c07d-4727-a4f8-384a45bc17e9/jFupv7GCAd.json"
-
-    background="transparent"
+				 <lottie-player
+   src="https://lottie.host/70faf130-c07d-4727-a4f8-384a45bc17e9/jFupv7GCAd.json"
+    
+   background="transparent"
     speed="1"
     style="width: 100px; height: 150px;"
     loop
     autoplay>
   </lottie-player>
-   <lottie-player
+
+  
+  <lottie-player
    src="https://lottie.host/0d9c6302-38bc-4b92-b314-4d5c59a5e902/4113mWjAh0.json"
     
    background="transparent"
@@ -634,13 +637,12 @@ document.addEventListener('touchmove', function(){}, { passive: true });
     autoplay>
   </lottie-player>
 
-
 </div>
           </div>
         </div>
       </div>
     </section>
-    
+		
 
     <footer class="ftco-footer ftco-section">
       <div class="container">
@@ -651,19 +653,22 @@ document.addEventListener('touchmove', function(){}, { passive: true });
               <p style="text-align: justify;">I am an SAP MM Consultant with hands-on experience in procurement, inventory management, goods receipt, and invoice verification using SAP S/4HANA. I focus on delivering simple, efficient, and reliable SAP solutions that support smooth business operations and process optimization.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <div class="footer-social">
-					<a href="https://www.linkedin.com/in/hariharan2732004/" target="_blank">
-						<i class="fab fa-linkedin-in"></i>
-					</a>
-					<a href="https://github.com/hariharan2732004" target="_blank">
-						<i class="fab fa-github"></i>
-					</a>
-					<a href="https://www.hackerrank.com/profile/hariharan2732004" target="_blank">
-						<i class="fab fa-hackerrank"></i>
-					</a>
-					<a href="https://wa.me/917904158150" target="_blank">
-						<i class="fab fa-whatsapp"></i>
-					</a>
-				</div>
+  <a href="https://www.linkedin.com/in/hariharan2732004/" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://github.com/hariharan2732004" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://www.hackerrank.com/profile/hariharan2732004" target="_blank">
+    <i class="fab fa-hackerrank"></i>
+  </a>
+
+  <a href="https://wa.me/917904158150" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+                
               </ul>
             </div>
           </div>
@@ -687,7 +692,7 @@ document.addEventListener('touchmove', function(){}, { passive: true });
                 <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Procure-To-Pay (P2P)</a></li>
                 <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Material Master Management</a></li>
                 <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Inventory Management</a></li>
-				<li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Vendor Management</a></li>
+                <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Vendor Management</a></li>
 				<li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>GR & IR Verification</a></li>
               </ul>
             </div>
@@ -697,7 +702,8 @@ document.addEventListener('touchmove', function(){}, { passive: true });
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><a href="https://goo.gl/maps/9qmHyAoDVL2F9PnHA"target="_blank"><span class="icon icon-map-marker"></span><span class="text">46/Kottaikulam, Pattukkottai,<br> Taminadu, India</span></a></li> <br>
+	                <li><a href="https://goo.gl/maps/9qmHyAoDVL2F9PnHA"target="_blank"><span class="icon icon-map-marker"></span><span class="text">46/Kottaikulam, Pattukkottai,<br> Taminadu, India</span></a></li>
+					<br>
 	                <li><a href="tel://7904158150"><span class="icon icon-phone2"></span><span class="text">+91 7904158150</span></a></li>
 	                <li><a href="mailto:hariharan2732004@gmail.com" target="_blank"><span class="icon icon-envelope"style="margin-right:12px;"></span> <span class="text">hariharan2732004@gmail.com</span></a></li>
 	              </ul>
@@ -708,7 +714,7 @@ document.addEventListener('touchmove', function(){}, { passive: true });
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p>&copy;<script>document.write(new Date().getFullYear());</script> <span><b>[Hariharan P]</b></span> All Rights Reserved. <i class="icon-heart color-danger" aria-hidden="true"></i>
+            <p>©<script>document.write(new Date().getFullYear());</script> <span><b>[Hariharan P]</b></span> All Rights Reserved. <i class="icon-heart color-danger" aria-hidden="true"></i>
   </p>
           </div>
         </div>
@@ -734,7 +740,7 @@ document.addEventListener('touchmove', function(){}, { passive: true });
   <script src="js/scrollax.min.js"></script>
   
   <script src="js/main.js"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
   </body>
 </html>
