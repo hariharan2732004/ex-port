@@ -57,7 +57,6 @@
         }
 
         /* 3. FIX: RESPONSIVE ABOUT TEXT (Auto-change based on screen) */
-        
         /* DEFAULT (DESKTOP) STYLES */
         .about-info li {
             display: flex;
@@ -88,6 +87,21 @@
                 word-break: break-word; 
                 overflow-wrap: break-word;
             }
+
+            /* NEW: STACK BUTTONS COLUMN-WISE ON MOBILE */
+            .home-slider .text .btn-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px; /* Space between buttons */
+                width: 100%;
+            }
+            .home-slider .text .btn {
+                width: 100%;
+                max-width: 280px; /* Prevent them from being too wide */
+                display: block;
+                margin: 0 !important; /* Reset default margins */
+            }
         }
 
         /* 4. FIX: ANIMATION AS BACKGROUND ON MOBILE */
@@ -106,7 +120,10 @@
                 width: 100% !important;
                 height: 100% !important;
                 z-index: 0; /* Send to back */
-                opacity: 0.25; /* Fade it out so text is readable */
+                
+                /* CHANGED: Increased Opacity (Brighter) */
+                opacity: 0.65; 
+                
                 display: flex !important;
                 align-items: center;
                 justify-content: center;
@@ -194,7 +211,12 @@
 		          		<span class="subheading">Hello!</span>
 			            <h1 class="mb-4 mt-3">I'm <span>HARIHARAN</span></h1>
 			            <h2 class="mb-4">A SAP MM Consultant</h2>
-			            <p><a href="mailto:hariharan2732004@gmail.com" class="btn btn-primary py-3 px-4">Hire me</a> <a href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
+                        
+                        <p class="btn-container">
+                            <a href="mailto:hariharan2732004@gmail.com" class="btn btn-primary py-3 px-4">Hire me</a> 
+                            <a href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">My works</a>
+                        </p>
+
 		            </div>
 		          </div>
 	        	</div>
@@ -221,7 +243,12 @@
 		          	<div class="text">
 		          		<span class="subheading">Hello!</span>
 			            <h1 class="mb-4 mt-3">I'm a <span>SAP MM Consultant</span> based in <span style="color: orange;">In</span>d<span style="color:  #138808;">ia</span></h1>
-			            <p><a href="mailto:hariharan2732004@gmail.com" class="btn btn-primary py-3 px-4">Hire me</a> <a href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
+			            
+                        <p class="btn-container">
+                            <a href="mailto:hariharan2732004@gmail.com" class="btn btn-primary py-3 px-4">Hire me</a> 
+                            <a href="#projects-section" class="btn btn-white btn-outline-white py-3 px-4">My works</a>
+                        </p>
+
 		            </div>
 		          </div>
 	        	</div>
