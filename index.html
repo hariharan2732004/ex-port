@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
 	<script>
-    // Fix for passive event listeners to improve scroll performance
+    // Fix: Passive event listeners for smooth scrolling
     document.addEventListener('touchstart', function(){}, {passive:true});
     document.addEventListener('wheel', function(){}, { passive: true });
     document.addEventListener('touchmove', function(){}, { passive: true });
@@ -12,7 +12,7 @@
 
     <title>Portfolio</title>
 
-    <link rel="icon" type="image/png" href="favico.png.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favico.png.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="favico.png.png">
 
     <meta charset="utf-8">
@@ -38,25 +38,41 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* 1. FORCE VERTICAL SCROLL ON HOME SLIDER */
+        /* 1. FIX: Home Slider Scrolling on Mobile */
         .home-slider, 
         .home-slider .owl-stage-outer, 
         .home-slider .owl-stage,
         .home-slider .owl-item,
         .slider-item {
-            touch-action: pan-y !important; /* Allows vertical scroll on mobile */
+            touch-action: pan-y !important; /* Allows you to scroll down even if you touch the slider */
         }
 
-        /* 2. PREVENT LOTTIE FROM BLOCKING TOUCHES */
+        /* 2. FIX: Prevent Animations from blocking clicks/scrolls */
         lottie-player {
             pointer-events: none !important;
         }
-
-        /* 3. ENSURE BUTTONS ARE CLICKABLE OVER ANIMATIONS */
         .slider-item .text a.btn {
             position: relative; 
             z-index: 10;
             pointer-events: auto; 
+        }
+
+        /* 3. FIX: About Section Text Visibility & Fitting on Mobile */
+        .about-info li {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .about-info li span:first-child {
+            font-weight: 600;
+            color: #ffffff; /* Label Color: White */
+            min-width: 110px; /* Fixed width for labels */
+            margin-right: 10px;
+        }
+        .about-info li span:last-child {
+            color: #cccccc; /* Value Color: Light Gray (Visible on Black) */
+            word-break: break-word; /* BREAKS LONG EMAILS TO NEXT LINE */
+            overflow-wrap: break-word; 
+            min-width: 0; /* Allows text to wrap inside flexbox */
         }
     </style>
 
@@ -166,14 +182,16 @@
 		          	<h1 class="big">About</h1>
 		            <h2 class="mb-4">About Me</h2>
 					 <p style="text-align: justify;">Focused B.E. graduate in Electronics and Communications with strong communication skills, seeking to build a career as an SAP MM Consultant. Skilled in understanding procurement, inventory management, and P2P processes, with the ability to learn quickly and adapt to business requirements. Committed to contributing to organizational efficiency while continuously enhancing my SAP knowledge.</p>
-		            <ul class="about-info mt-4 px-md-0 px-2">
+		            
+                    <ul class="about-info mt-4 px-md-0 px-2">
 		            	<li class="d-flex"><span>Name:</span> <span>HARIHARAN P</span></li>
 		            	<li class="d-flex"><span>Date of birth:</span> <span>March 27, 2004</span></li>
-		            	<li class="d-flex"><span>Address:</span> <span>Kottaikulam,Pattukkottai,Tamilnadu-INDIA</span></li>
+		            	<li class="d-flex"><span>Address:</span> <span>Kottaikulam, Pattukkottai, Tamilnadu-INDIA</span></li>
 		            	<li class="d-flex"><span>Zip code:</span> <span>614601</span></li>
 		            	<li class="d-flex"><span>Email:</span> <span>hariharan2732004@gmail.com</span></li>
 		            	<li class="d-flex"><span>Phone: </span> <span>+91 7904158150</span></li>
 		            </ul>
+
 		          </div>
 		        </div>
 	          <div class="counter-wrap ftco-animate d-flex mt-md-3">
