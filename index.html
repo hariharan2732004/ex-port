@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<script>
-    // Fix: Passive event listeners for smooth scrolling
-    document.addEventListener('touchstart', function(){}, {passive:true});
-    document.addEventListener('wheel', function(){}, { passive: true });
-    document.addEventListener('touchmove', function(){}, { passive: true });
+    <script>
+      document.addEventListener('touchstart', function(){}, {passive:true});
+      document.addEventListener('wheel', function(){}, { passive: true });
+      document.addEventListener('touchmove', function(){}, { passive: true });
     </script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +43,7 @@
         .home-slider .owl-stage,
         .home-slider .owl-item,
         .slider-item {
-            touch-action: pan-y !important; /* Allows you to scroll down even if you touch the slider */
+            touch-action: pan-y !important; 
         }
 
         /* 2. FIX: Prevent Animations from blocking clicks/scrolls */
@@ -57,22 +56,38 @@
             pointer-events: auto; 
         }
 
-        /* 3. FIX: About Section Text Visibility & Fitting on Mobile */
+        /* 3. FIX: RESPONSIVE ABOUT TEXT (Auto-change based on screen) */
+        
+        /* DEFAULT (DESKTOP) STYLES */
         .about-info li {
             display: flex;
             margin-bottom: 10px;
+            font-size: 16px; /* Standard size */
         }
         .about-info li span:first-child {
             font-weight: 600;
-            color: #ffffff; /* Label Color: White */
-            min-width: 110px; /* Fixed width for labels */
+            color: #ffffff;
+            width: 130px; /* Fixed width for perfect alignment */
+            min-width: 130px;
             margin-right: 10px;
         }
         .about-info li span:last-child {
-            color: #cccccc; /* Value Color: Light Gray (Visible on Black) */
-            word-break: break-word; /* BREAKS LONG EMAILS TO NEXT LINE */
-            overflow-wrap: break-word; 
-            min-width: 0; /* Allows text to wrap inside flexbox */
+            color: #cccccc;
+        }
+
+        /* MOBILE STYLES (Triggers automatically on screens smaller than 768px) */
+        @media (max-width: 768px) {
+            .about-info li {
+                font-size: 14px; /* Slightly smaller text to fit phone */
+            }
+            .about-info li span:first-child {
+                width: 90px; /* Smaller label width */
+                min-width: 90px; 
+            }
+            .about-info li span:last-child {
+                word-break: break-word; /* Wrap long emails/addresses */
+                overflow-wrap: break-word;
+            }
         }
     </style>
 
