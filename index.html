@@ -62,12 +62,12 @@
         .about-info li {
             display: flex;
             margin-bottom: 10px;
-            font-size: 16px; /* Standard size */
+            font-size: 16px; 
         }
         .about-info li span:first-child {
             font-weight: 600;
             color: #ffffff;
-            width: 130px; /* Fixed width for perfect alignment */
+            width: 130px; 
             min-width: 130px;
             margin-right: 10px;
         }
@@ -75,18 +75,73 @@
             color: #cccccc;
         }
 
-        /* MOBILE STYLES (Triggers automatically on screens smaller than 768px) */
+        /* MOBILE STYLES */
         @media (max-width: 768px) {
             .about-info li {
-                font-size: 14px; /* Slightly smaller text to fit phone */
+                font-size: 14px; 
             }
             .about-info li span:first-child {
-                width: 90px; /* Smaller label width */
+                width: 90px; 
                 min-width: 90px; 
             }
             .about-info li span:last-child {
-                word-break: break-word; /* Wrap long emails/addresses */
+                word-break: break-word; 
                 overflow-wrap: break-word;
+            }
+        }
+
+        /* 4. FIX: ANIMATION AS BACKGROUND ON MOBILE */
+        @media (max-width: 991px) { /* Trigger on tablets/mobile */
+             /* Reset the Home Slider Grid to allow overlay */
+            .home-slider .slider-item .row {
+                position: relative;
+                height: 100%;
+            }
+
+            /* Position the Animation (one-third) absolutely behind text */
+            .home-slider .slider-item .one-third {
+                position: absolute !important;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100% !important;
+                z-index: 0; /* Send to back */
+                opacity: 0.25; /* Fade it out so text is readable */
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            /* Make sure Lottie fits nicely */
+             .home-slider .slider-item .one-third lottie-player {
+                width: 100% !important;
+                height: auto !important;
+                max-width: none !important; 
+                transform: scale(1.2); /* Make slightly larger to fill space */
+             }
+
+            /* Position Text (one-forth) on top */
+            .home-slider .slider-item .one-forth {
+                position: relative;
+                z-index: 2; /* Bring to front */
+                width: 100%;
+                height: 100%;
+                text-align: center; /* Center text */
+                justify-content: center; /* Center Vertically */
+            }
+            
+            .home-slider .slider-item .one-forth .text {
+                width: 100%;
+                padding: 0 15px;
+            }
+
+            /* Adjust heading sizes for mobile overlap */
+            .home-slider .text h1 {
+                font-size: 40px;
+            }
+            .home-slider .text h2 {
+                font-size: 20px;
+                color: #ffffff;
             }
         }
     </style>
@@ -122,7 +177,8 @@
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img d-flex align-items-center justify-content-center">
+	          	
+                <div class="one-third js-fullheight order-md-last img d-flex align-items-center justify-content-center">
                   <lottie-player
                      src="https://lottie.host/f9f3ec78-7aa4-4f88-ab75-6976f89e90f7/ZpnaABhFGx.json"
                     background="transparent"
@@ -133,7 +189,7 @@
                   </lottie-player>
                 </div>
 
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
 		          		<span class="subheading">Hello!</span>
 			            <h1 class="mb-4 mt-3">I'm <span>HARIHARAN</span></h1>
@@ -149,7 +205,8 @@
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	         <div class="one-third js-fullheight order-md-last img d-flex align-items-center justify-content-center">
+	         
+             <div class="one-third js-fullheight order-md-last img d-flex align-items-center justify-content-center">
                   <lottie-player
                   src="https://assets4.lottiefiles.com/packages/lf20_qp1q7mct.json"
                     background="transparent"
@@ -160,7 +217,7 @@
                   </lottie-player>
             </div>
 
-		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                  <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
 		          		<span class="subheading">Hello!</span>
 			            <h1 class="mb-4 mt-3">I'm a <span>SAP MM Consultant</span> based in <span style="color: orange;">In</span>d<span style="color:  #138808;">ia</span></h1>
